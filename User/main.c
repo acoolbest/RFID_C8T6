@@ -65,17 +65,16 @@ int main ( void )
 	USART1_Config ();  //USART1 配置模式为 115200 8-N-1，中断接收 
 
 	RC522_Init ();     //RC522模块所需外设的初始化配置
-
+	
+	#if 0
 	LCD_Init ();         //LCD 初始化
 
-
 	printf ( "WF-RC522 Test\n" );
-
 
 	ILI9341_Clear ( 0,   0, 240, 320, macBACKGROUND);	
 	ILI9341_Clear ( 0, 272, 240,   2, macGREEN);
 	ILI9341_DispString_EN ( 0, 280, "Please put the IC card on WF-RC522 antenna area ...", macBACKGROUND, macRED );
-
+	#endif
 
 	PcdReset ();
 	M500PcdConfigISOType ( 'A' );//设置工作方式
